@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="">
+</head>
+<body>
+  <div class="container">
+    <div class="Application Form">
+      <h3>Application Form</h3>
+      <form action="end" method="POST">
+        {% csrf_token %}
+
+        <label for="">Name</label>
+        <input type="text" id="username" placeholder="Enter your username" required>
+        <br>
+        <label for="">D-O-B</label>
+        <input type="date" id="D-O-B" placeholder="Enter your D-O-B" required>
+        <br>
+        <label for="">Age</label>
+        <input type="number" id="age" placeholder="Enter your D-O-B" required>
+
+        <br>
+        <label>Gender :</label>
+        <input type="radio" name="gender" id="male"  value="male" checked>
+         <label for="male">Male</label>
+        <input type="radio" name="gender" id="female"  value="female" checked>
+        <label for="female">Female</label>
+        <br>
+        <label for="">Phone Number</label>
+        <input type="number" id="phone number" required>
+        <br>
+        <label for="">Email-id</label>
+        <input type="text" id="email" placeholder="Enter your email id" required>
+        <br>
+        <label for="">Address</label>
+        <input type="text" id="address" required>
+        <br>
+        <label  class="form-label">District</label>
+        <select id="select" name="district" required>
+        <option selected>Choose District</option>
+          <option>Thiruvananthapuram</option>
+          <option>Kollam</option>
+          <option>Kottayam</option>
+          <option>Ernakulam</option>
+          <option>Trissur</option>
+          <option>Kannur</option>
+        </select>
+        <br>
+        <label class="form-label">Branch</label>
+        <select id="select1" required>
+        <option selected>Choose Branch</option>
+          <option>Kilimanoor</option>
+          <option>Nagaroor</option>
+          <option>Attingal</option>
+          <option>Kazhakootam</option>
+        </select>
+
+        <br>
+        <label class="form-label">Account Type</label>
+        <select>
+          <option selected>Choose Account Type</option>
+         <option>Savings Account</option>
+          <option>Fixed Deposit Account</option>
+         <option>NRI Account</option>
+         <option>Recurring Deposit Account</option>
+        </select>
+        <br>
+        <label>Materials Provided:</label>
+        <label>Credit Card</label>
+        <input type="checkbox" checked>
+        <label>Debit Card</label>
+        <input type="checkbox" checked>
+        <label>Cheque Book</label>
+        <input type="checkbox" checked>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button >
+
+      </form>
+    </div>
+  </div>
+</body>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+
+</html>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  background: #009579;
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+
+}
+input[type=text], input[type=email], input[type=number], input[type=select], input[type=date],input[type=select],input[type=password], input[type=tel]
+{
+    width: 60%;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 8px;
+    resize: vertical;
+}
+textarea{
+    width:36%;
+    padding: 10px;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 4px;
+    resize: vertical;
+}
+input[type=radio],input[type=checkbox]{
+    width: 5%;
+    padding-left: 3%;
+    border: 1px solid rgb(168, 166, 166);
+    border-radius: 5px;
+    resize: vertical;
+}
+h1{
+    font-family: Arial;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    text-decoration: underline;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=submit]:hover {
+background-color: #32a336;
+}
+.container{
+    border-radius: 5px;
+    background-color:#f2f2f2;
+    padding: 20px;
+}
+.col-10{
+    float: left;
+    width:10%;
+    margin-top: 6px;
+}
+.col-90{
+    float: left;
+    width: 90%;
+    margin-top: 6px;
+}
+.row:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.btn-primary{
+ color: #fff;
+ background: #009579;
+ font-size: 1.2rem;
+ font-weight: 500;
+ letter-spacing: 1px;
+ margin-top: 1.7rem;
+ cursor: pointer;
+ transition: 0.4s;
+
+}
+.button-primary:hover{
+ background: #006653;
+}
+</style>
